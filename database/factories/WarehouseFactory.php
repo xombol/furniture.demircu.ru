@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\WarefouseEnums;
 use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,8 +22,11 @@ class WarehouseFactory extends Factory
      */
     public function definition(): array
     {
+
+        $warehousesIds = Warehouse::query()->pluck('id');
+
         return [
-            'location' => $this->faker->address,
+            'location' => $this->faker->randomElement($warehousesIds),
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Furniture;
+use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,5 +24,16 @@ class FurnitureFactory extends Factory
         return [
             'name' => $this->faker->word,
         ];
+    }
+
+
+    public function attachWarehouses(): FurnitureFactory|Factory
+    {
+        $warehouses = Warehouse::query()->get();
+
+        return $this->afterCreating(function (Furniture $furniture) use ($warehouses) {
+            // Присоединение складов к мебели
+            $furniture->warehouses()->attach($this->faker->randomElement($warehouses));
+        });
     }
 }

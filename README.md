@@ -4,11 +4,15 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 of development by easing common tasks used in many web projects, such as:
 
 ```console 
-sail artisan migrate. 
+sail artisan migrate
 ```
 
 ```console 
-sail artisan db:seed --class=FurnitureSeed.
+sail artisan db:seed --class=WarehousesSeed
+```
+
+```console 
+sail artisan db:seed --class=FurnitureSeed
 ```
 
 ### Выполнено

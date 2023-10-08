@@ -17,7 +17,7 @@ class FurnitureSeed extends Seeder
     {
         Furniture::factory()->count(10)
             ->has(Color::factory()->count(2), 'colors')
-            ->has(Warehouse::factory()->count(1), 'warehouses')
+            ->attachWarehouses()
             ->create();
     }
 }

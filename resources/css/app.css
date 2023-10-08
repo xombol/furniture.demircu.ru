@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.change-warehouse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: antiquewhite;
+    width: fit-content;
+    margin: auto;
+    border: 1px solid #6d6d6d;
+    text-align: center;
+    flex-direction: row;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: .5s;
+    transition: .5s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.change-warehouse:hover {
+    background: #13a84f;
+    color: white;
+    animation: .5s;
+    transition: .5s;
+}
